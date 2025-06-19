@@ -695,33 +695,44 @@ webix.ui({
     id: 'manual',
     head: 'Manual',
     width: 500,
-    height: 400,
+    height: 410,
     move: true,
     close: true,
     resize: true,
     position: 'center',
     hidden: ! restoreValue('firstTime', true),
     body: {
-        template: `
-            <ul>
-            <li>Enter the <strong>Date</strong> like:<ul>
-            <li>1996 -&gt; year</li>
-            <li>1996 1 -&gt; year month</li>
-            <li>1996 1 26 -&gt; year month day</li>
-            <li>-1996 -&gt; negative year for BCE date.</li>
-            </ul>
-            </li>
-            <li>Enter or adjust the <strong>Duration Days</strong> for date duration.</li>
-            <li>Enter or adjust the <strong>Limit</strong> of total items shown on the screen.</li>
-            <li>When in any input box, press enter or <strong>Go</strong> to jump to the date duration.</li>
-            <li>Click <strong>Prev Dur</strong>/<strong>Next Dur</strong> to jump to the previous/next date duration.</li>
-            <li>Hover on the markers on the map to show the list of items under the cursor and their date ranges.</li>
-            <li>Click on the markers to persist the list. Click the close button or anywhere on the map to close the list.</li>
-            <li>Click on the links in the list to jump to the corresponding Wikidata pages.</li>
-            <li>Click <span class='mdi mdi-cogs'></span> to show/hide the control panel.</li>
-            <li>Click <span class='mdi mdi-help-circle-outline'></span> to open this manual window.</li>
-            </ul>
-        `
+        rows: [
+            {
+                template: `
+                    <ul>
+                    <li>Enter the <strong>Date</strong> like:<ul>
+                    <li>1996 -&gt; year</li>
+                    <li>1996 1 -&gt; year month</li>
+                    <li>1996 1 26 -&gt; year month day</li>
+                    <li>-1996 -&gt; negative year for BCE date.</li>
+                    </ul>
+                    </li>
+                    <li>Enter or adjust the <strong>Duration Days</strong> for date duration.</li>
+                    <li>Enter or adjust the <strong>Limit</strong> of total items shown on the screen.</li>
+                    <li>When in any input box, press enter or <strong>Go</strong> to jump to the date duration.</li>
+                    <li>Click <strong>Prev Dur</strong>/<strong>Next Dur</strong> to jump to the previous/next date duration.</li>
+                    <li>Hover on the markers on the map to show the list of items under the cursor and their date ranges.</li>
+                    <li>Click on the markers to persist the list. Click the close button or anywhere on the map to close the list.</li>
+                    <li>Click on the links in the list to jump to the corresponding Wikidata pages.</li>
+                    <li>Click <span class='mdi mdi-cogs'></span> to show/hide the control panel.</li>
+                    <li>Click <span class='mdi mdi-help-circle-outline'></span> to open this manual window.</li>
+                    </ul>
+                `
+            },
+            {
+                cols: [
+                    {},
+                    { view: "button", label: "Close", click: function(){ $$('manual').hide(); } },
+                    {}
+                ]
+            }
+        ]
     }
 });
     
