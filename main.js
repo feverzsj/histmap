@@ -54,6 +54,11 @@ await Promise.all([
     })(),
     (async function()
     {
+        maplibregl.setRTLTextPlugin(
+            'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.3.0/dist/mapbox-gl-rtl-text.js',
+            true // Lazy load the plugin
+        );
+
         map = new maplibregl.Map
         ({
             container: 'map',
