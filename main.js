@@ -574,7 +574,7 @@ webix.ui({
                         id: 'durDays',
                         label: 'Duration Days',
                         labelAlign: 'center',
-                        value: restoreValue('durDays', 100),
+                        value: restoreValue('durDays', 200),
                         min: 1,
                         //max: 366,
                         labelPosition: 'top',
